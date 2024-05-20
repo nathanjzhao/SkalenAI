@@ -23,15 +23,17 @@ export default function Home() {
   useEffect(() => {
     console.log(locations);
   }, [locations]);
+  
 
   return (
     <div className="flex flex-col h-screen">
-      <div className="bg-gray text-white p-4">
+      <div className="bg-gray text-white p-4 flex justify-between items-center">
         <h1 className="text-2xl">Your Header Title</h1>
+        
       </div>
       <div className="flex flex-grow">
         <div className="w-full">
-          <MapComponent />
+          <MapComponent/>
         </div>
         <div className="overflow-y-auto w-1/2 bg-twitter-blue p-4">
           {locations.filter(location => isNaN(Number(location['geotagging_lon']))).map((location, index) => (

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, useMapEvents, Popup } from 'react-leaflet';
 import Papa from 'papaparse';
-
+import MauiButton from './MauiButton';
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 
-const MapComponent = () => {
+const MapComponent = ({mode}) => {
 
   const [locations, setLocations] = useState([]);
 
@@ -27,6 +27,7 @@ const MapComponent = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
+        <MauiButton />
         {locations.length > 0 && locations.map((location, index) => {
           const lat = Number(location['geotagging_lat']);
           const lon = Number(location['geotagging_lon']);
