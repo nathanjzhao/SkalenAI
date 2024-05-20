@@ -11,6 +11,9 @@ const config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        'twitter-blue': '#1DA1F2',
+      },
     },
   },
   plugins: [],

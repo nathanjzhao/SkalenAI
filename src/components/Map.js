@@ -5,22 +5,6 @@ import Papa from 'papaparse';
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 
-// export async function getStaticProps() {
-//   const data = await fetch('/Maui.csv');
-//   const text = await data.text();
-//   console.log(text);
-//   const result = Papa.parse(text, { header: true, dynamicTyping: true });
-//   console.log(result);
-//   const locations = result.data;
-//   console.log(locations);
-
-//   return {
-//     props: {
-//       locations,
-//     },
-//   };
-// }
-
 const MapComponent = () => {
 
   const [locations, setLocations] = useState([]);
@@ -36,10 +20,6 @@ const MapComponent = () => {
     fetchCSV();
   }, []);
 
-  useEffect(() => {
-    console.log(locations);
-  }, [locations]);
-
   return (
     <>
       <MapContainer center={[0, 0]} zoom={2} style={{ height: "100vh", width: "100%" }}>
@@ -51,7 +31,19 @@ const MapComponent = () => {
           const lat = Number(location['geotagging_lat']);
           const lon = Number(location['geotagging_lon']);
           if (!isNaN(lat) && !isNaN(lon)) {
-            return <Marker key={index} position={[lat, lon]} />;
+            // const roundedConfidence = Number(location['geotagging_confidence'].toFixed(3));
+            const date = new Date(location['created_at']);
+            return (
+              <Marker key={index} position={[lat, lon]}>
+                <Popup>
+                  <span>{location['text']} 
+                    <br/><br/>
+                    <p>By {location['author_username']} at {date.toLocaleDateString() + ', ' + date.toLocaleTimeString()}</p>
+                    <p>Geolcation confidience: {location['geotagging_confidence']}</p>
+                    <a href={location['url']}>View Tweet here</a></span>
+                </Popup>
+              </Marker>
+            );
           }
           return null;
         })}
