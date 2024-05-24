@@ -30,13 +30,22 @@ export default function Followers() {
               nodes: nodes,
               edges: edges
             };
-            console.log(data)
+
             const options = {};
             new vis.Network(networkContainer.current, data, options);
+
+            if (network) {
+              const canvas = network.canvas.frame.canvas;
+              const dataUrl = canvas.toDataURL();
+              const link = document.createElement('a');
+              link.download = 'network.png';
+              link.href = dataUrl;
+              link.click();
+            }
           });
         });
     };
-    
+
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-200">
         <div ref={networkContainer} className="w-full max-w-2xl h-96 bg-white shadow-md rounded-md overflow-hidden"></div>
