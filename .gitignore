@@ -35,4 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-public/fol.csv
+public/fol.txt
+public/userFollowers.json

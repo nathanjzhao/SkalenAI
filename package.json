@@ -15,7 +15,8 @@
     "papaparse": "^5.4.1",
     "react": "^18",
     "react-dom": "^18",
-    "react-leaflet": "^4.2.1"
+    "react-leaflet": "^4.2.1",
+    "vis-network": "^9.1.9"
   },
   "devDependencies": {
     "@types/json5": "^2.2.0",

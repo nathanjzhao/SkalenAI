@@ -27,7 +27,7 @@ const MapComponent = ({mode}) => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
-        <MauiButton />
+        <MauiButton className="relative"/>
         {locations.length > 0 && locations.map((location, index) => {
           const lat = Number(location['geotagging_lat']);
           const lon = Number(location['geotagging_lon']);
