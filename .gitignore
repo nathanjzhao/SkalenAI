@@ -36,4 +36,5 @@ yarn-error.log*
 next-env.d.ts
 
 public/fol.txt
+public/fol.csv
 public/userFollowers.json
