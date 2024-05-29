@@ -1,4 +1,4 @@
-# Project for Stanford's Big Earth Wildfire Hackathon
+# Skalen AI for Enhanced Wildfire Prediction: The Maui Case Study
 
 Utilizing geotagging and graph theory to detect fires early. In this preliminary study, we analyzed the fire during Auguest 8-9, 2023 that affected Lahaina in Maui.
 
