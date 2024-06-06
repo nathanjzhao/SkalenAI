@@ -1,12 +1,14 @@
+![Big Earth Hackathon Poster](./public/Final%20Big%20Earth%20Hackathon%20Poster.png)
+
 # Skalen AI for Enhanced Wildfire Prediction: The Maui Case Study
 
-Utilizing geotagging and graph theory to detect fires early. In this preliminary study, we analyzed the fire during Auguest 8-9, 2023 that affected Lahaina in Maui.
+Utilizing geotagging and graph theory for inferring community linkages to detect fires early. In this preliminary study, we analyzed the fire during Auguest 8-9, 2023 that affected Lahaina in Maui.
 
-![Big Earth Hackathon Poster](./public/Final%20Big%20Earth%20Hackathon%20Poster.png)
+Big thanks to Derek Fong for his mentorship surrounding broad wildfire-related issues and applications, and thanks to Alina Pak for helping us with working with geotagged social media data!
 
 ## Project Details
 
-Our dataset is derived from a large volume of Twitter data. We processed these tweets, focusing on those containing specific keywords related to wildfires. The data includes the geotagged username, time of the post, text content, url, and crucially, geolocation information. The geotagging was performed using the **Skalen AI's** geotagging model in partnership with its creator, Alina Pak.
+Our dataset is derived from a large volume of Twitter data. We processed these tweets, focusing on those containing specific keywords related to wildfires. The data includes the geotagged username, time of the post, text content, url, and crucially, geolocation information. The geotagging was performed using the **Skalen AI's** geotagging model.
 
 - 🔥 **Fire Duration**: August 8-9
 - 📅 **Study Timeframe**: August 1-13, 2023 (for pre-fire + post-fire study)
@@ -22,9 +24,9 @@ Beyond data geolocated from Twitter, we also utilized satellite data to compare 
 
 ### Follower-based Analysis
 
-- 🛠️ **Tool**: d3.js for dynamic visualization of followers, on Next.js for front end client processing
+- 🛠️ **Tool**: d3.js and Next.js
 - 🔬 **Methods**: Utilized Bron-Kerbosch to find k-cliques, which are k-sized subgroups of a graph where all nodes are interconnected. Number of users considered, follower threshold for adding edge, and size of cliques (k) during visualization modifiable on web frontend.
-- 📊 **Dataset**: geotagging Twitter dataset
+- 📊 **Dataset**: Geotagging Twitter dataset
 
 ### Timescale Analysis
 
